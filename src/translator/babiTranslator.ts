@@ -1,8 +1,8 @@
 export const babiConverter = (hiragana: string): string => {
   //Insert "ba, bi, bu, be, bo" into a sentence
   let babigo: string = '';
-  let textLength: number = hiragana.length - 1;
-  let textArray: string[] = [...hiragana];
+  const textLength: number = hiragana.length - 1;
+  const textArray: string[] = [...hiragana];
 
   textArray.forEach((letter: string, idx: number) => {
     let next_letter: string | undefined = textArray[idx + 1];
