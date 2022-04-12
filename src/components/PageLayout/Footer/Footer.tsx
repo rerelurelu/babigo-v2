@@ -1,4 +1,4 @@
-import React from 'react';
+import { VFC } from 'react';
 import styled from 'styled-components';
 
 // Component style
@@ -12,7 +12,7 @@ const StFooterText = styled.p`
   text-align: center;
 `;
 
-export const Footer: React.VFC = () => {
+export const Footer: VFC = () => {
   return (
     <StFooter>
       <StFooterText>©2021 zoniha</StFooterText>

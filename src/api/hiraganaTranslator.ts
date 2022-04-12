@@ -3,17 +3,17 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 const GOO_API: string | undefined = process.env.GOO_API;
 const GOO_API_RUL: string = 'https://labs.goo.ne.jp/api/hiragana';
 
-interface GooApi {
+type GooApi = {
   app_id: string | undefined;
   sentence: string;
   output_type: string;
-}
+};
 
-interface ConvertedData {
+type ConvertedData = {
   request_id: string;
   output_type: string;
   converted: string;
-}
+};
 
 export const hiraganaTranslator = (inputText: string): string => {
   let data: GooApi = {
