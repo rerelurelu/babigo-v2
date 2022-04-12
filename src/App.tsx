@@ -1,9 +1,11 @@
 import React from 'react';
+import { Footer } from './components/PageLayout/Footer/Footer';
+import { Layout } from './components/PageLayout/Layout/Layout';
 
 export const App: React.VFC = () => {
   return (
-    <div>
-      <h1>Hello!</h1>
-    </div>
+    <Layout>
+      <Footer />
+    </Layout>
   );
 };
