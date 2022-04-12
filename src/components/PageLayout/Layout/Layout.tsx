@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { VFC, ReactNode } from 'react';
 import styled from 'styled-components';
 
 // Type
@@ -20,7 +20,7 @@ const StTitle = styled.h1`
   text-align: center;
 `;
 
-export const Layout: FC<Props> = ({ children }) => {
+export const Layout: VFC<Props> = ({ children }) => {
   return (
     <StMainContainer>
       <StTitle>バビ語変換サイト</StTitle>
