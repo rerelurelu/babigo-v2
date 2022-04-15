@@ -16,6 +16,7 @@ const StForm = styled.form`
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 0px;
+    width: 100%;
   }
 `;
 

@@ -8,6 +8,7 @@ const StMainContainer = styled.div`
   color: #ffffff;
   background: linear-gradient(315deg, #fcd181 0%, #e79087 74%);
   min-height: 100vh;
+  padding-bottom: 30px;
 `;
 
 const StTitle = styled.h1`
