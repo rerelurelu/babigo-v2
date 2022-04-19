@@ -15,6 +15,9 @@ const StOutputField = styled.textarea`
   resize: none;
   height: 300px;
   flex: none;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  line-height: 1.3;
   &::placeholder {
     opacity: 0.5;
   }
