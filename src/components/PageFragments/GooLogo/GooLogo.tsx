@@ -8,7 +8,7 @@ const StGooLogo = styled.img`
   right: 0;
   max-width: 200px;
   vertical-align: bottom;
-  z-index: 999;
+  z-index: 99;
 `;
 
 export const GooLogo: VFC = () => {
