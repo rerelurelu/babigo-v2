@@ -1,5 +1,6 @@
-import { VFC } from 'react';
+import { createContext, Dispatch, SetStateAction, useState, VFC } from 'react';
 import styled from 'styled-components';
+import { PrivacyPolicy } from '../../PrivacyPolicyModal/PrivacyPolicyModal';
 
 const REPO_URL: string = `https://github.com/zoniha/babigo-v2`;
 
@@ -34,18 +35,32 @@ const StLink = styled.a`
   font-size: 15px;
 `;
 
+// Context
+export const DisplayModal = createContext({} as Dispatch<SetStateAction<boolean>>);
+
 export const Footer: VFC = () => {
+  const [isDisplay, setIsDisplay] = useState<boolean>(false);
+
+  const handleClick = (): void => {
+    setIsDisplay(true);
+  };
+
   return (
-    <StFooter>
-      <StLinkContainer>
-        <StLink href="#" target="_blank" rel="noopener noreferrer">
-          Privacy Policy
-        </StLink>
-        <StLink href={REPO_URL} target="_blank" rel="noopener noreferrer">
-          GitHub
-        </StLink>
-      </StLinkContainer>
-      <StFooterText>©2021 zoniha</StFooterText>
-    </StFooter>
+    <>
+      <DisplayModal.Provider value={setIsDisplay}>
+        {isDisplay ? <PrivacyPolicy /> : null}
+      </DisplayModal.Provider>
+      <StFooter>
+        <StLinkContainer>
+          <StLink onClick={handleClick} target="_blank" rel="noopener noreferrer">
+            Privacy Policy
+          </StLink>
+          <StLink href={REPO_URL} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </StLink>
+        </StLinkContainer>
+        <StFooterText>©2021 zoniha</StFooterText>
+      </StFooter>
+    </>
   );
 };
