@@ -19,3 +19,6 @@
 　｀＞､　　 _　　 _　　　_｀　 、
 　　｀¨ レ'´¨｀ﾞィ ¨＞ ､トﾆΓ
 ```
+[StackShare](https://stackshare.io/zoniha/babigo-v2)
+
+[Visit the site](https://babigo.vercel.app/)
