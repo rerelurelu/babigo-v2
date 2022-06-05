@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { fetchHiragana } from '../../../api/hiraganaTranslator';
 import { device } from '../../../style/breakpoints';
 import { babiConverter } from '../../../translator/babiTranslator';
+import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 
 const StOutputField = styled.textarea`
   color: #90a4ae;
@@ -35,24 +36,6 @@ const StInputField = styled(StOutputField)`
   }
 `;
 
-const StTranslateButton = styled.button`
-  background-color: #d93965;
-  border: solid 0.0625rem #ee8c68;
-  font-weight: 600;
-  padding: 1rem 0.5rem;
-  margin: auto 2rem;
-  max-width: 100px;
-  border-radius: 10px;
-  color: #ffffff;
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
-  &:hover {
-    cursor: pointer;
-  }
-  @media ${device.laptop} {
-    flex: 1 0 auto;
-  }
-`;
-
 export const InputField: VFC = () => {
   const [inputText, setInputText] = useState<string>('');
   const [outputText, setOutputText] = useState<string>('');
@@ -79,9 +62,7 @@ export const InputField: VFC = () => {
         onChange={handleChange}
         value={inputText}
       />
-      <StTranslateButton type="submit" onClick={handleSubmit}>
-        変換する
-      </StTranslateButton>
+      <PrimaryButton onClick={handleSubmit}>変換する</PrimaryButton>
       <StOutputField
         disabled={true}
         placeholder="ここに変換結果が表示されます"
