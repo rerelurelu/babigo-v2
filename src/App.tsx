@@ -12,7 +12,6 @@ export const App: VFC = () => {
       <Head />
       <Description />
       <TextForm />
-      <GooLogo />
       <Footer />
     </Layout>
   );

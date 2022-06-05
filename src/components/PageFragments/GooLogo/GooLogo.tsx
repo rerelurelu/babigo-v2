@@ -1,14 +1,19 @@
 import { VFC } from 'react';
 import styled from 'styled-components';
 
+import { device } from '../../../style/breakpoints';
+
 // Component style
 const StGooLogo = styled.img`
   position: absolute;
   bottom: 0;
   right: 0;
-  max-width: 200px;
+  max-width: 100px;
   vertical-align: bottom;
   z-index: 99;
+  @media ${device.laptop} {
+    max-width: 200px;
+  }
 `;
 
 export const GooLogo: VFC = () => {
