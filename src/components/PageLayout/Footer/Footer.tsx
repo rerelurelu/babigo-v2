@@ -1,5 +1,6 @@
 import { createContext, Dispatch, SetStateAction, useState, VFC } from 'react';
 import styled from 'styled-components';
+import { GooLogo } from '../../PageFragments/GooLogo/GooLogo';
 import { PrivacyPolicy } from '../../PrivacyPolicyModal/PrivacyPolicyModal';
 
 const REPO_URL: string = `https://github.com/zoniha/babigo-v2`;
@@ -60,6 +61,7 @@ export const Footer: VFC = () => {
           </StLink>
         </StLinkContainer>
         <StFooterText>©2021 zoniha</StFooterText>
+        <GooLogo />
       </StFooter>
     </>
   );
