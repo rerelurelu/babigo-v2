@@ -1,4 +1,4 @@
-import { useContext, VFC } from 'react';
+import { useContext, VFC, useCallback, memo } from 'react';
 import styled from 'styled-components';
 import { device } from '../../style/breakpoints';
 import { DisplayModal } from '../PageLayout/Footer/Footer';
@@ -91,12 +91,12 @@ const StCloseButton = styled.button`
   cursor: pointer;
 `;
 
-export const PrivacyPolicy: VFC = () => {
+export const PrivacyPolicy: VFC = memo(() => {
   const setIsDisplay = useContext(DisplayModal);
 
-  const clickCloseButton = (): void => {
+  const clickCloseButton = useCallback((): void => {
     setIsDisplay(false);
-  };
+  }, []);
 
   return (
     <StModalOverlay>
@@ -142,4 +142,4 @@ export const PrivacyPolicy: VFC = () => {
       </StModalContent>
     </StModalOverlay>
   );
-};
+});

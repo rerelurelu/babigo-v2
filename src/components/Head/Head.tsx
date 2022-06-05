@@ -1,9 +1,9 @@
-import { memo, VFC } from 'react';
+import { VFC } from 'react';
 
 const GA_TRACKING_ID: string = import.meta.env.VITE_GA_TRACKING_ID;
 const GS_VERIFICATION_ID: string = import.meta.env.VITE_GS_VERIFICATION_ID;
 
-export const Head: VFC = memo(() => {
+export const Head: VFC = () => {
   return (
     <head>
       <meta name="google-site-verification" content={`${GS_VERIFICATION_ID}`} />
@@ -15,4 +15,4 @@ export const Head: VFC = memo(() => {
       <meta property="og:site_name" content="バビ語変換サイト" />
     </head>
   );
-});
+};
