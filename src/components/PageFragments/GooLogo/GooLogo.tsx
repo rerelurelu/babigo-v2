@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { memo, VFC } from 'react';
 import styled from 'styled-components';
 
 import { device } from '../../../style/breakpoints';
@@ -16,7 +16,7 @@ const StGooLogo = styled.img`
   }
 `;
 
-export const GooLogo: VFC = () => {
+export const GooLogo: VFC = memo(() => {
   return (
     <>
       <a href="http://www.goo.ne.jp/" target="_blank" rel="noopener noreferrer">
@@ -24,4 +24,4 @@ export const GooLogo: VFC = () => {
       </a>
     </>
   );
-};
+});
