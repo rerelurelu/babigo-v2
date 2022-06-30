@@ -1,4 +1,4 @@
-import { useContext, VFC, useCallback, memo } from 'react';
+import { useContext, VFC, memo } from 'react';
 import styled from 'styled-components';
 import { device } from '../../style/breakpoints';
 import { DisplayModal } from '../PageLayout/Footer/Footer';
@@ -94,9 +94,9 @@ const StCloseButton = styled.button`
 export const PrivacyPolicy: VFC = memo(() => {
   const setIsDisplay = useContext(DisplayModal);
 
-  const clickCloseButton = useCallback((): void => {
+  const clickCloseButton = (): void => {
     setIsDisplay(false);
-  }, []);
+  };
 
   return (
     <StModalOverlay>
