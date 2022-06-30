@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction, useCallback, useState, VFC } from 'react';
+import { createContext, Dispatch, SetStateAction, useState, VFC } from 'react';
 import styled from 'styled-components';
 import { GooLogo } from '../../PageFragments/GooLogo/GooLogo';
 import { PrivacyPolicy } from '../../PrivacyPolicyModal/PrivacyPolicyModal';
@@ -42,9 +42,9 @@ export const DisplayModal = createContext({} as Dispatch<SetStateAction<boolean>
 export const Footer: VFC = () => {
   const [isDisplay, setIsDisplay] = useState<boolean>(false);
 
-  const handleClick = useCallback((): void => {
+  const handleClick = (): void => {
     setIsDisplay(true);
-  }, []);
+  };
 
   return (
     <>
