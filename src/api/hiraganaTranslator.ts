@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { GooApiPost, GooApiResponse } from '../types/gooApi/gooApi';
 
-const GOO_ID: string = import.meta.env.VITE_GOO_ID;
+const GOO_ID: string | undefined = process.env.VITE_GOO_ID;
 const GOO_API_RUL: string = 'https://labs.goo.ne.jp/api/hiragana';
 
 export const fetchHiragana = async (inputText: string): Promise<string> => {
