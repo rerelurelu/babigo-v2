@@ -1,9 +1,9 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 
 const GA_TRACKING_ID: string = import.meta.env.VITE_GA_TRACKING_ID;
 const GS_VERIFICATION_ID: string = import.meta.env.VITE_GS_VERIFICATION_ID;
 
-export const Head: VFC = () => {
+export const Head: FC = () => {
   return (
     <head>
       <meta name="google-site-verification" content={`${GS_VERIFICATION_ID}`} />
