@@ -3,6 +3,16 @@ import styled from 'styled-components';
 
 import { device } from '../../../style/breakpoints';
 
+export const GooLogo: VFC = memo(() => {
+  return (
+    <>
+      <a href="http://www.goo.ne.jp/" target="_blank" rel="noopener noreferrer">
+        <StGooLogo src="//u.xgoo.jp/img/sgoo.png" alt="supported by goo" title="supported by goo" />
+      </a>
+    </>
+  );
+});
+
 // Component style
 const StGooLogo = styled.img`
   position: absolute;
@@ -15,13 +25,3 @@ const StGooLogo = styled.img`
     max-width: 200px;
   }
 `;
-
-export const GooLogo: VFC = memo(() => {
-  return (
-    <>
-      <a href="http://www.goo.ne.jp/" target="_blank" rel="noopener noreferrer">
-        <StGooLogo src="//u.xgoo.jp/img/sgoo.png" alt="supported by goo" title="supported by goo" />
-      </a>
-    </>
-  );
-});

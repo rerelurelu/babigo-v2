@@ -5,6 +5,36 @@ import { PrivacyPolicy } from '../../PrivacyPolicyModal/PrivacyPolicyModal';
 
 const REPO_URL: string = `https://github.com/zoniha/babigo-v2`;
 
+export const DisplayModal = createContext({} as Dispatch<SetStateAction<boolean>>);
+
+export const Footer: VFC = () => {
+  const [isDisplay, setIsDisplay] = useState<boolean>(false);
+
+  const handleClick = (): void => {
+    setIsDisplay(true);
+  };
+
+  return (
+    <>
+      <DisplayModal.Provider value={setIsDisplay}>
+        {isDisplay ? <PrivacyPolicy /> : null}
+      </DisplayModal.Provider>
+      <StFooter>
+        <StLinkContainer>
+          <StLink onClick={handleClick} target="_blank" rel="noopener noreferrer">
+            Privacy Policy
+          </StLink>
+          <StLink href={REPO_URL} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </StLink>
+        </StLinkContainer>
+        <StFooterText>©2021 zoniha</StFooterText>
+        <GooLogo />
+      </StFooter>
+    </>
+  );
+};
+
 // Component style
 const StFooter = styled.footer`
   width: 100%;
@@ -35,34 +65,3 @@ const StLink = styled.a`
   margin-right: 20px;
   font-size: 15px;
 `;
-
-// Context
-export const DisplayModal = createContext({} as Dispatch<SetStateAction<boolean>>);
-
-export const Footer: VFC = () => {
-  const [isDisplay, setIsDisplay] = useState<boolean>(false);
-
-  const handleClick = (): void => {
-    setIsDisplay(true);
-  };
-
-  return (
-    <>
-      <DisplayModal.Provider value={setIsDisplay}>
-        {isDisplay ? <PrivacyPolicy /> : null}
-      </DisplayModal.Provider>
-      <StFooter>
-        <StLinkContainer>
-          <StLink onClick={handleClick} target="_blank" rel="noopener noreferrer">
-            Privacy Policy
-          </StLink>
-          <StLink href={REPO_URL} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </StLink>
-        </StLinkContainer>
-        <StFooterText>©2021 zoniha</StFooterText>
-        <GooLogo />
-      </StFooter>
-    </>
-  );
-};

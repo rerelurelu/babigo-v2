@@ -6,36 +6,6 @@ import { device } from '../../../style/breakpoints';
 import { babiConverter } from '../../../translator/babiTranslator';
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 
-const StOutputField = styled.textarea`
-  color: #90a4ae;
-  width: 100%;
-  background-color: #ffffff;
-  border: solid 2px #f9c1b1;
-  border-radius: 5px;
-  padding: 10px;
-  resize: none;
-  height: 300px;
-  flex: none;
-  font-size: 16px;
-  letter-spacing: 1.6px;
-  line-height: 1.3;
-  &::placeholder {
-    opacity: 0.5;
-  }
-  @media ${device.laptop} {
-    flex: 1 0 500px;
-    height: 400px;
-  }
-`;
-
-const StInputField = styled(StOutputField)`
-  &:focus {
-    border: solid 2px #fe5858;
-    outline: none;
-    box-shadow: 0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1);
-  }
-`;
-
 export const InputField: VFC = () => {
   const [inputText, setInputText] = useState<string>('');
   const [outputText, setOutputText] = useState<string>('');
@@ -71,3 +41,34 @@ export const InputField: VFC = () => {
     </>
   );
 };
+
+// Component style
+const StOutputField = styled.textarea`
+  color: #90a4ae;
+  width: 100%;
+  background-color: #ffffff;
+  border: solid 2px #f9c1b1;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+  height: 300px;
+  flex: none;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  line-height: 1.3;
+  &::placeholder {
+    opacity: 0.5;
+  }
+  @media ${device.laptop} {
+    flex: 1 0 500px;
+    height: 400px;
+  }
+`;
+
+const StInputField = styled(StOutputField)`
+  &:focus {
+    border: solid 2px #fe5858;
+    outline: none;
+    box-shadow: 0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1);
+  }
+`;
