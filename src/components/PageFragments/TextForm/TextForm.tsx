@@ -6,6 +6,25 @@ import { InputField } from '../InputField/InputField';
 import { device } from '../../../style/breakpoints';
 import { WIDTH_THRESHOLD } from '../../../style/breakpoints';
 
+export const TextForm: VFC = () => {
+  const width: number = useWindowWidth();
+  const isMobileWindow: boolean = width <= WIDTH_THRESHOLD;
+
+  return (
+    <StFormContainer>
+      <StSection>
+        {isMobileWindow ? (
+          <InputField />
+        ) : (
+          <StTextareaContainer>
+            <InputField />
+          </StTextareaContainer>
+        )}
+      </StSection>
+    </StFormContainer>
+  );
+};
+
 // Component style
 const StFormContainer = styled.div`
   margin-left: 5%;
@@ -37,22 +56,3 @@ const StTextareaContainer = styled.div`
     width: 100%;
   }
 `;
-
-export const TextForm: VFC = () => {
-  const width: number = useWindowWidth();
-  const isMobileWindow: boolean = width <= WIDTH_THRESHOLD;
-
-  return (
-    <StFormContainer>
-      <StSection>
-        {isMobileWindow ? (
-          <InputField />
-        ) : (
-          <StTextareaContainer>
-            <InputField />
-          </StTextareaContainer>
-        )}
-      </StSection>
-    </StFormContainer>
-  );
-};

@@ -5,6 +5,15 @@ import styled from 'styled-components';
 import { device } from '../../../style/breakpoints';
 import { Props } from '../../../types/props/props';
 
+export const PrimaryButton: VFC<ButtonProps> = memo((props) => {
+  const { children, onClick } = props;
+  return (
+    <StPrimaryButton type="submit" onClick={onClick}>
+      {children}
+    </StPrimaryButton>
+  );
+});
+
 const StPrimaryButton = styled.button`
   background-color: #d93965;
   border: solid 0.0625rem #ee8c68;
@@ -20,7 +29,7 @@ const StPrimaryButton = styled.button`
   }
   &:active {
     box-shadow: 0 0;
-    background-color: #d93965B3;
+    background-color: #d93965b3;
   }
   @media ${device.laptop} {
     flex: 1 0 auto;
@@ -30,12 +39,3 @@ const StPrimaryButton = styled.button`
 type ButtonProps = Props & {
   onClick: () => void;
 };
-
-export const PrimaryButton: VFC<ButtonProps> = memo((props) => {
-  const { children, onClick } = props;
-  return (
-    <StPrimaryButton type="submit" onClick={onClick}>
-      {children}
-    </StPrimaryButton>
-  );
-});
