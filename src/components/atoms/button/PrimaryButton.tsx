@@ -1,11 +1,14 @@
-import { type } from 'os';
-import { memo, VFC } from 'react';
+import { FC, memo } from 'react';
 import styled from 'styled-components';
 
 import { device } from '../../../style/breakpoints';
 import { Props } from '../../../types/props/props';
 
-export const PrimaryButton: VFC<ButtonProps> = memo((props) => {
+type ButtonProps = Props & {
+  onClick: () => void;
+};
+
+export const PrimaryButton: FC<ButtonProps> = memo((props) => {
   const { children, onClick } = props;
   return (
     <StPrimaryButton type="submit" onClick={onClick}>
@@ -35,7 +38,3 @@ const StPrimaryButton = styled.button`
     flex: 1 0 auto;
   }
 `;
-
-type ButtonProps = Props & {
-  onClick: () => void;
-};

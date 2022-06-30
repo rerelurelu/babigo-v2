@@ -1,4 +1,4 @@
-import { useState, VFC } from 'react';
+import { useState, FC } from 'react';
 import styled from 'styled-components';
 
 import { fetchHiragana } from '../../../api/hiraganaTranslator';
@@ -6,7 +6,7 @@ import { device } from '../../../style/breakpoints';
 import { babiConverter } from '../../../translator/babiTranslator';
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 
-export const InputField: VFC = () => {
+export const InputField: FC = () => {
   const [inputText, setInputText] = useState<string>('');
   const [outputText, setOutputText] = useState<string>('');
 

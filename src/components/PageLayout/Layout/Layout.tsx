@@ -1,10 +1,10 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 
 import { Props } from '../../../types/props/props';
 import { device } from '../../../style/breakpoints';
 
-export const Layout: VFC<Props> = ({ children }) => {
+export const Layout: FC<Props> = ({ children }) => {
   return (
     <StMainContainer>
       <StTitle>バビ語変換サイト</StTitle>

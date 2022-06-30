@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 import { useWindowWidth } from '@react-hook/window-size';
 
@@ -6,7 +6,7 @@ import { InputField } from '../InputField/InputField';
 import { device } from '../../../style/breakpoints';
 import { WIDTH_THRESHOLD } from '../../../style/breakpoints';
 
-export const TextForm: VFC = () => {
+export const TextForm: FC = () => {
   const width: number = useWindowWidth();
   const isMobileWindow: boolean = width <= WIDTH_THRESHOLD;
 

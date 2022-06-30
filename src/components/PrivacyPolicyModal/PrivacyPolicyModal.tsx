@@ -1,9 +1,9 @@
-import { useContext, VFC, memo } from 'react';
+import { useContext, FC, memo } from 'react';
 import styled from 'styled-components';
 import { device } from '../../style/breakpoints';
 import { DisplayModal } from '../PageLayout/Footer/Footer';
 
-export const PrivacyPolicy: VFC = memo(() => {
+export const PrivacyPolicy: FC = memo(() => {
   const setIsDisplay = useContext(DisplayModal);
 
   const clickCloseButton = (): void => {

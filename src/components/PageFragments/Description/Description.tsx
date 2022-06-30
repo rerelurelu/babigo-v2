@@ -1,9 +1,9 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 
 const BABIGO_DESCRIPTION: string = `https://www.zoniha.icu/blog/babigo-translator#babigo`;
 
-export const Description: VFC = () => {
+export const Description: FC = () => {
   return (
     <StDescriptionContainer>
       <p>日本語文章をバビ語に変換できます。</p>

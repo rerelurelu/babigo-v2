@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction, useState, VFC } from 'react';
+import { createContext, Dispatch, SetStateAction, useState, FC } from 'react';
 import styled from 'styled-components';
 import { GooLogo } from '../../PageFragments/GooLogo/GooLogo';
 import { PrivacyPolicy } from '../../PrivacyPolicyModal/PrivacyPolicyModal';
@@ -7,7 +7,7 @@ const REPO_URL: string = `https://github.com/zoniha/babigo-v2`;
 
 export const DisplayModal = createContext({} as Dispatch<SetStateAction<boolean>>);
 
-export const Footer: VFC = () => {
+export const Footer: FC = () => {
   const [isDisplay, setIsDisplay] = useState<boolean>(false);
 
   const handleClick = (): void => {

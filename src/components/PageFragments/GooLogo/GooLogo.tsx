@@ -1,9 +1,9 @@
-import { memo, VFC } from 'react';
+import { memo, FC } from 'react';
 import styled from 'styled-components';
 
 import { device } from '../../../style/breakpoints';
 
-export const GooLogo: VFC = memo(() => {
+export const GooLogo: FC = memo(() => {
   return (
     <>
       <a href="http://www.goo.ne.jp/" target="_blank" rel="noopener noreferrer">
